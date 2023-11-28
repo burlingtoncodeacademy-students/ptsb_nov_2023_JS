@@ -65,3 +65,14 @@ const ssn = "555-55-5555";
  !  🌶️🌶️🌶️ Spicy challenge 🌶️🌶️🌶️:
  *  Assign the state value to be lowercased, when you console.log it, it should capitalize the state
  */
+
+let fName = "Amit";
+let lName = "Mangat";
+let houseNum = 123;
+let street = "fake st";
+let city = "fakesville";
+let state = "in";
+let postCode = 55555;
+
+console.log(`My name is ${fName} ${lName} \n 
+${houseNum} ${street} , ${city}, ${state.toUpperCase()} ${postCode}`);
