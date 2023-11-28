@@ -1,7 +1,7 @@
 /*
 ?   Variables
     - containers that store data in memory
-    * delclaration
+    * declaration
         - allows memory space to be reserved by using an identifier
         - starts with the keywords of (let, var or const)
         - cannot start with a number, other than characters like (_ $)
@@ -35,7 +35,7 @@ console.log(myFirstName + " " + myLastName);
 let userName = "iamagamer10";
 // String interpolation
 console.log(`Hey, your username is : ${userName}`);
-//(a)   (b)(c)  (d)
+//(a) (b)  (c)  (d)
 let address = "123 Main st, Salem, MA";
 // a - keyword
 // b - variable id
