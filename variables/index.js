@@ -47,14 +47,14 @@ const ssn = "555-55-5555";
 
 /*
 ?   Coding practice for variables
-    - Be concises (ex: firstName instead of usersFirstBornBlondHairedName)
+    - Be concise (ex: firstName instead of usersFirstBornBlondHairedName)
     - Be specific (ex: item instead i)
     - camelCase (most popular in JS)
     - snake_case
     - PascalCase
     - skewer-case
     - nocase
-    - SCREAMING_CASE (used for environment variables)
+    - SCREAMING_CASE (used for environmental variables)
 */
 
 // ! Challenge
