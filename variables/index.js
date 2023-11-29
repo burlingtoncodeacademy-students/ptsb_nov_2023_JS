@@ -1,23 +1,22 @@
 /*
 ?   Variables
-    - containers that store data in memory
-    * declaration
+    * Containers that store data in memory
+    * Declaration
         - allows memory space to be reserved by using an identifier
         - starts with the keywords of (let, var or const)
         - cannot start with a number, other than characters like (_ $)
         - if no value is assigned, it will be 'undefined' by default
-    * intialization
+    * Initialization
         - assignment of a data value
         - can be any value or data type (str, int, arr, fx, class, etc.)
         - can be reassigned (except for the const)
 */
 
-// Variable declaration
-
+//? Variable declaration
 let myVar;
 console.log(myVar);
 
-// Variable initialization
+//? Variable initialization
 let myFirstName = "Bob";
 let myLastName = "Mangat";
 
@@ -29,12 +28,13 @@ console.log(
   "after reassignment"
 );
 
-// String concatenation
+//? String concatenation
 console.log(myFirstName + " " + myLastName);
 
 let userName = "iamagamer10";
-// String interpolation
+//? String interpolation
 console.log(`Hey, your username is : ${userName}`);
+
 //(a) (b)  (c)  (d)
 let address = "123 Main st, Salem, MA";
 // a - keyword
@@ -59,7 +59,7 @@ const ssn = "555-55-5555";
 
 // ! Challenge
 /*
- * Set variables of fName,lName, houseNumber, street, city, state, post code
+ * Set variables of fName,lName, houseNum, street, city, state, postcode
  * Concatenate or interpolate them together
  * Console log that result
  !  🌶️🌶️🌶️ Spicy challenge 🌶️🌶️🌶️:
@@ -74,5 +74,6 @@ let city = "fakesville";
 let state = "in";
 let postCode = 55555;
 
-console.log(`My name is ${fName} ${lName} \n 
-${houseNum} ${street} , ${city}, ${state.toUpperCase()} ${postCode}`);
+console.log(
+  `My name is ${fName} ${lName}\n ${houseNum} ${street} , ${city}, ${state.toUpperCase()} ${postCode}`
+);
