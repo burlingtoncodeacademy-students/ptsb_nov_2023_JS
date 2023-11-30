@@ -145,3 +145,164 @@ if (myName[0] === "A" && myName.length >= length) {
     - Handle invalid output ex. "potato"
 
 */
+
+let age = 45;
+
+// if (age < 16) {
+//   console.log("Cannot drive");
+// } else if (age < 18) {
+//   console.log("Can drive but not drink");
+// } else if (age < 21) {
+//   console.log("Can vote but not drink");
+// } else if (age >= 21) {
+//   console.log("Can drink");
+// } else {
+//   console.log("Invalid output?!?");
+// }
+
+if (age < 16) {
+  console.log("Cannot drive");
+}
+
+if (age < 18) {
+  console.log("Can drive but not drink");
+}
+
+/*
+    ! Important thought 
+    * if you want your condition to display ANY possible match, create separate if statements
+    * if you want your condition to display ONE exact match, chain your conditional statements
+
+*/
+
+/*
+  ? Ternaries
+    * an expression
+    * quick way to write out if/else conditionals
+    * commonly used to check a quick condition 
+
+  ? Syntax
+
+  conditional ? expr if true : expr if false
+
+  ? Chaining syntax
+
+  conditional ? expr if true 
+              : else if expr ? expr if true
+   
+*/
+
+let ignition; //undefined
+
+ignition ? console.log("ignition is on") : console.log("ignition is off");
+
+if (ignition) {
+  console.log("ignition is on");
+} else {
+  console.log("ignition is off");
+}
+
+let season = 3;
+
+if (season == 1) {
+  console.log("Spring");
+} else if (season == 2) {
+  console.log("Summer");
+} else if (season == 3) {
+  console.log("Autumn");
+} else if (season == 4) {
+  console.log("Winter");
+}
+
+season == 1
+  ? console.log("Spring")
+  : season == 2
+  ? console.log("Summer")
+  : season == 3
+  ? console.log("Autumn")
+  : season == 4
+  ? console.log("Winter")
+  : null;
+
+/*
+  ! Challenge WRITE AS TERNARY
+  * create an age variable with a number between 15-22 
+  * check if the age is under 16, if so say they cant drive
+  * check if the age between 16 and 18, say they can drive but not drink
+  * if the age is between 18 & 21, say they can vote but not drink
+  * if over 21, say they can drink
+  ! Spicy
+    - Handle invalid output ex. "potato"
+*/
+
+age = 21;
+
+age < 16
+  ? console.log("cant drive")
+  : age < 18
+  ? console.log("can drive, cannot drink")
+  : age < 21
+  ? console.log("can vote, cannot drink")
+  : age >= 21
+  ? console.log("they can drink")
+  : console.log("invalid output");
+
+/*
+  ? Switch Statements
+  * execute a block of code dependent upon a different case
+  */
+
+let x = "dog";
+
+switch (true) {
+  case x > 2:
+    console.log("x is greater than 2");
+    break;
+  case x > 3:
+    console.log("x is greater than 3");
+  default:
+    console.log("something went wrong");
+}
+
+let month = new Date().getMonth() + 1;
+
+switch (month) {
+  case 12:
+  case 1:
+  case 2:
+    console.log("Winter");
+    break;
+  case 3:
+  case 4:
+  case 5:
+    console.log("Spring");
+    break;
+  case 6:
+  case 7:
+  case 8:
+    console.log("Summer");
+    break;
+  case 9:
+  case 10:
+  case 11:
+    console.log("Autumn");
+    break;
+  default:
+    console.log("error getting month");
+}
+
+let uprightStaff = "joeschmo";
+
+switch (uprightStaff) {
+  case "Paul":
+    console.log(`${uprightStaff} is our Program Staff Manager`);
+    break;
+  case "Amit":
+    console.log(`${uprightStaff} is a SD instructor`);
+    break;
+  case "Max":
+    console.log(`${uprightStaff} is our Program Manager`);
+    break;
+  default:
+    console.log("Staff member not found in database");
+}
