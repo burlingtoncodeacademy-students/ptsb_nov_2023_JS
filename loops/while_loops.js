@@ -107,3 +107,18 @@ do {
 villain.hp <= 0
   ? console.log(`Spider-Man captures ${villain.baddie}`)
   : console.log(`${villain.baddie} has taken down Spider-Man`);
+
+/*
+
+!     Challenge - FIZZ BUZZ
+        - Using a for loop, print out numbers (1-100) that increase by 1, starting at 1.
+        - Within the loop create a chain of if else statements that will check if a number is divisible by 3. If so, print to the console: "Fizz", along with the value
+        - If a number is divisible by 5, print to the console: "Buzz", along with the value
+        - If it is divisible by both print to the console: "Fizz Buzz", along with the value 
+*/
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 == 0 && i % 5 == 0) console.log(`Fizz Buzz ${i}`);
+  else if (i % 3 == 0) console.log(`Fizz ${i}`);
+  else if (i % 5 == 0) console.log(`Buzz ${i}`);
+}
