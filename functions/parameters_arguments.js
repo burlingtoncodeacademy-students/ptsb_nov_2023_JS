@@ -39,3 +39,71 @@ order(myFavFood);
         - console.log 'hello, my name is <your name>'
         - call (or invoke) our function
 */
+
+function fullNameFunc(fName, lName) {
+  let fullName = fName + " " + lName;
+  console.log(`Hello, my name is ${fullName}`);
+}
+
+fullNameFunc("Amit", "Mangat");
+fullNameFunc("Jon", "Doe");
+fullNameFunc("Bruce", "Wayne");
+
+let test = function test1() {
+  console.log("hi");
+};
+
+test();
+
+let x = 1;
+
+function one() {
+  let x = 2;
+  console.log("x's value inside of the function is:", x);
+}
+
+one();
+
+console.log(x);
+
+function calc(x, y, operator) {
+  switch (operator) {
+    case "+":
+      console.log("Add", x, y);
+      return x + y;
+    case "*":
+      console.log("Multiply", x, y);
+      return x * y;
+  }
+}
+
+console.log(calc(2, 2, "+"));
+console.log(calc(5, 5, "*"));
+
+// Can store the return or output value in a variable
+let thisSum = calc(1, 9, "+");
+
+console.log(thisSum);
+
+console.log(console);
+
+// let console = 5; //! NEVER make variable called console
+
+// console; // == 5
+
+// A function inside of an object is called a method.
+
+let mockConsoleObject = {
+  log: function (text) {
+    process.stdout.write(text + "\n");
+  },
+  add: function (num1, num2) {
+    return num1 + num2;
+  },
+};
+
+mockConsoleObject.log("hey will this display");
+
+mockConsoleObject.add(2, 2); //4
+
+console.log(mockConsoleObject.add(2, 2));
