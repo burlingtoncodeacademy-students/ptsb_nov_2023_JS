@@ -132,15 +132,15 @@ const expensiveFunction = async () => {
   }
 };
 
-// Doing the loop asynchronously so that the other tasks can continue instead of waiting for the loop
+// Doing the loop asynchronously so that the other tasks can continue instead of waiting for the loop to finish
 
-const getDog = async () => {
-  console.log("start");
-  let result = await expensiveFunction();
-  console.log("Loops done");
+const getLog = async () => {
+  console.log("Start"); // "Start" logged before we execute our expensive loop
+  let result = await expensiveFunction(); // Expensive or Slow or Boggy task executing...and store result when complete
+  console.log("Loops done", result); // Only log this if the await'ed result resolves/completes
 };
 
-getDog();
+getLog(); // Executing our function that will handle the task of dealing with something that may take awhile..(the loop in this case)
 
 console.log(
   "Continue doing other tasks.... while we wait for the loop to finish"
