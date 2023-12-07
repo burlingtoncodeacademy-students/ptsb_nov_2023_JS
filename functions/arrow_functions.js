@@ -65,3 +65,5 @@ const tipCalc = (subTotal) => {
 console.log(tipCalc(10));
 console.log(tipCalc(20));
 console.log(tipCalc(15));
+
+console.log(```hello there```);
