@@ -42,6 +42,24 @@ let globalScopedVariable = "This is a global scope variable";
 
 // console.log(innerScopedVariable); //! ERROR: innerScopedVariable is not defined
 
+//? Var vs Let in scope
+
+{
+  let x = 5;
+}
+
+// console.log(x);//! ERROR
+
+{
+  {
+    {
+      var y = 5;
+    }
+  }
+}
+
+console.log(y); //! Var keyword in inner scope 'bleeds'/polutes into the outer scope
+//! Avoid using 'var', use 'let' instead
 /*
 
     ? Function Scope
@@ -96,6 +114,45 @@ console.log(outerFx()); // === "Inner fx scope variable"
         - It then executes the code line-by-line
 */
 
+// console.log(myDog); //! ERROR Cannot access 'myDog' before initialization
 let myDog = "lab";
-
 console.log(myDog);
+
+console.log(age); //! Returns undefined
+var age = 32;
+console.log(age); // prints our value of 32
+
+x(); // Traditional functions get hoisted. Able to call them before they are declared
+
+function x() {
+  console.log("function declaration x executed");
+}
+
+// y(); //! Error, function expressions are not hoisted
+
+let yfxExp = function () {
+  console.log("Function expression");
+};
+
+yfxExp();
+
+function run() {
+  var foo = "foo";
+  let bar = "bar";
+  var fxVariable = "test";
+  console.log(foo, bar, fxVariable);
+
+  {
+    var moo = "moo";
+    let baz = "baz";
+    console.log(moo, baz);
+  }
+
+  //   console.log(baz); //! Error, trying to access a nested scoped variable
+  console.log(moo); // Able to print, because var can be accessed by outer scope
+}
+
+run();
+// console.log(fxVariable); //! ReferenceError: fxVariable is not defined
+
+//! Using var is bad practice, don't try to use hoisting to your "benefit"!!!!!!
