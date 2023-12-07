@@ -88,8 +88,14 @@ function outerFx() {
 console.log(outerFx()); // === "Inner fx scope variable"
 
 /*
-
-
-
-
+    ? Hoisting 
+    * JS' parsing engine reads top to bottom, left to right
+    * JS' interpreter runs the code twice
+        - First, it looks for VARiables and fx declarations and hoists them
+        - It allocates memory space for those declarations
+        - It then executes the code line-by-line
 */
+
+let myDog = "lab";
+
+console.log(myDog);
