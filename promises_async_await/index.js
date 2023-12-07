@@ -126,8 +126,9 @@ promiseEx(networkStatus)
 
 const expensiveFunction = async () => {
   for (let i = 0; i <= 1_000_000_000; i++) {
+    // console.log(i);
     if (i === 1_000_000_000) {
-      return i;
+      return i; // Since this function is async, it is returning a Promise object (the data needs to be handled with a resolver)
     }
   }
 };
