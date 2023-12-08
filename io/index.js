@@ -76,7 +76,7 @@ const process = require("process"); //? Importing our module from Node
 // });
 
 // ? Readline
-const readline = require("readline");
+const readline = require("readline"); // Import of module
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -89,39 +89,63 @@ const rl = readline.createInterface({
 //   rl.close();
 // });
 
-function ask(questionText) {
+// function ask(questionText) {
+//   return new Promise((resolve, reject) => {
+//     if (questionText) {
+//       rl.question(questionText + "\n", (input) => resolve(input));
+//     } else {
+//       reject("Provide a question please");
+//       rl.close();
+//     }
+//   });
+// }
+
+// const start = async (question) => {
+//   try {
+//     let response = await ask(question);
+
+//     // Waiting for a valid response before continuing execution below
+//     response = response.toString().toLowerCase();
+
+//     if (response.length === 0) {
+//       console.log("Please provide an answer!");
+//       await start(question);
+//     }
+
+//     if (response === "y") {
+//       console.log("Yayy, well here's some pie 🥧🥧🥧🥧");
+//     } else if (response === "n") {
+//       console.log("awwww shucks");
+//     }
+
+//     rl.close();
+//     // let response = await ask(""); //! Will hit the reject in promise
+//   } catch (err) {
+//     console.log("Hey you hit an error?", err);
+//   }
+// };
+
+// start("Do you like pie? (Y/N)");
+// start("Do you like animals (Y/N)"); //! Cant ask multiple questions
+
+// console.log("I wonder what your answer will be?"); //? Executes will promise is being handled
+
+async function ask(question) {
   return new Promise((resolve, reject) => {
-    if (questionText) {
-      rl.question(questionText + "\n", (input) => resolve(input));
-    } else {
-      reject("Provide a question please");
-      rl.close();
-    }
+    rl.question(question + "\n", (userInput) => {
+      resolve(userInput);
+    });
   });
 }
+// Using async to allow waiting for our value to be present.
+async function start() {
+  const firstQAnswer = await ask("What is your name?");
+  console.log("Answer to first question is:", firstQAnswer);
 
-const start = async (question) => {
-  try {
-    let response = await ask(question);
-    response = response.toString().toLowerCase();
+  const secondQAnswer = await ask("What is your age?");
+  console.log("Answer to second question is:", secondQAnswer);
 
-    if (response.length === 0) {
-      console.log("Please provide an answer!");
-      await start(question);
-    }
+  rl.close();
+}
 
-    if (response === "y") {
-      console.log("Yayy, well here's some pie 🥧🥧🥧🥧");
-    } else if (response === "n") {
-      console.log("awwww shucks");
-    }
-
-    rl.close();
-    // let response = await ask(""); //! Will hit the reject in promise
-  } catch (err) {
-    console.log("Hey you hit an error?", err);
-  }
-};
-
-start("Do you like pie? (Y/N)");
-// start("Do you like animals (Y/N)"); //! Cant ask multiple questions
+start();
