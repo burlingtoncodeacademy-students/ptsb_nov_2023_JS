@@ -128,7 +128,7 @@ const rl = readline.createInterface({
 // start("Do you like pie? (Y/N)");
 // start("Do you like animals (Y/N)"); //! Cant ask multiple questions
 
-// console.log("I wonder what your answer will be?"); //? Executes will promise is being handled
+// console.log("I wonder what your answer will be?"); //? Executes when promise is being handled
 
 async function ask(question) {
   return new Promise((resolve, reject) => {
